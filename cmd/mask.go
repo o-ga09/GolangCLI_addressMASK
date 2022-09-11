@@ -43,6 +43,7 @@ func runCmd_ReplaceSring(args []string) {
 	//引数チェック
 	if len(os.Args) < 3 {
 		fmt.Println("対象フォルダをしてください")
+		os.Exit(1)
 	}
 	//フォルダを開く
 	foldername := args[2]
@@ -53,6 +54,7 @@ func runCmd_ReplaceSring(args []string) {
 		bytes, err := ioutil.ReadFile(foldername + filename.Name())
 		if err != nil {
 			fmt.Println(err)
+			os.Exit(1)
 		}
 		//読み取った文字列を文字列に変換
 		contents := string(bytes)
