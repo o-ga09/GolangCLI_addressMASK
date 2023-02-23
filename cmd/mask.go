@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -51,7 +51,7 @@ func runCmd_ReplaceSring(args []string) {
 
 	//フォルダに存在するファイルを取得する
 	for _,filename := range files {
-		bytes, err := ioutil.ReadFile(foldername + filename.Name())
+		bytes, err := ioutil.ReadFile(foldername + "/" + filename.Name())
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
@@ -71,3 +71,6 @@ func runCmd_ReplaceSring(args []string) {
 
 }
 
+func init() {
+	rootCmd.AddCommand(MaskCmd)
+}
